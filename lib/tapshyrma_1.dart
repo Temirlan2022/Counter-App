@@ -30,11 +30,9 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   // int counter = 0;
-  
 
   void _incrementCounter() {
     setState(() {
@@ -66,11 +64,13 @@ class _MyHomePageState extends State<MyHomePage> {
               margin: EdgeInsets.all(20.0),
               color: Colors.blue,
               padding: EdgeInsets.all(30.0),
-              child: ElevatedButton(
+              child: InkWell(
                 child: Text('Сан: $_counter'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: ((context) => Str2(count: _counter))));
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: ((context) => Str2(count: _counter))));
                 },
               ),
             ),
